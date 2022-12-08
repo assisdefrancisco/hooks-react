@@ -6,7 +6,7 @@ import PageTitle from '../../components/layout/PageTitle'
 const sum = (a, b) => {
     const future = Date.now() + 2000
 
-    while(Date.now() < future) {}
+    while(Date.now() < future) {} // espera... 2s
 
     return a + b;
 }

@@ -1,19 +1,14 @@
 import React, { useState } from 'react'
-import { useCallback } from 'react';
 import PageTitle from '../../components/layout/PageTitle'
 import UseCallbackButtons from './UseCallbackButtons';
 
 const UseCallback = (props) => {
+
     const [count , setCount] = useState(0)
 
-    const inc = useCallback((delta) => {
-        setCount(current => current + delta);
-    }, [setCount])
-    
-
-    // function inc(delta) {
-    //     setCount(count + delta);
-    // }
+    function inc(delta) {
+        setCount(count + delta);
+    }
 
     return (
         <div className="UseCallback">
@@ -25,8 +20,7 @@ const UseCallback = (props) => {
             <div className="center">
                 <span className="text">{count}</span>
 
-                <UseCallbackButtons inc={inc} />
-                {/* <UseCallbackButtons inc={inc} /> */}
+                <UseCallbackButtons inc={inc.bind(this)} />                
             </div>
         </div>
     )
